@@ -16,7 +16,9 @@ Since it is a regression problem, we will have a squared error related metrics a
  RMSLE =  
  
 n = number of observations; pi = prediction from model for ith observation ; ai = actual price of ith observation.
+
 The corresponding r code (also mentioned in the r scripts wherever required) used to calculate this metric for any two given vectors of prediction and actual values is the following:
+
 rmsle = function(pred, test) {
 	sub = as.numeric()
 	for (i in c(1:length(test))) {

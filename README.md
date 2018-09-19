@@ -1,21 +1,21 @@
-## Mercari Price Suggestion Challenge
+# Mercari Price Suggestion Challenge
 
-# 1.	Problem statement
+## 1.	Problem statement
 
 A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product.  
 
-2.	Background
+## 2.	Background
 
 Several online trading companies or online shopping websites which sell a wide range of items need to suggest the prices automatically to their items. This process need to be automated because the items are just so many to be done by human beings and also getting it done by human being is very slow and expensive. So Artificial Intelligence and Machine Learning has a big application here. The Biggest Challenge here is that the price of items is dependent on the type of item and there are tens of thousands of different types of item. Added to this complexity prices of similar items can vary a lot based on their brand, condition of item, specifications of the item and so on. 
 The most useful variables for predicting the price (item name, brand name, category, and description) all of them are unstructured text data and the target variable is a continuous numerical variable. Thus, due to this complication this problem becomes even more challenging. So, to deal with this here I have used the text analytics tools to derive the useful term frequency related new variables from this unstructured text data which can help us predict the prices more accurately and also the training and prediction steps can be done in a time and computation efficient manner. The text data where the complete text is important (e.g. brand name) they were label encoded so that the processing and computation is faster with these new label encoded variables.  After basic pre-processing steps many different algorithms, ranging from basic statistical method such as generalized linear model to advanced neural networks, which were suitable for regressions were employed and tested. The algorithm selection was done using n-fold cross-validation method to obtain the minimum bias and minimum variance of the trained algorithm. Then tuning of different parameters for the selected model was performed to select the most optimum parameters. Finally the most optimum model with best performance was build and tested on the given test dataset.
 
-3.	Evaluation metric or Error metric 
+## 3.	Evaluation metric or Error metric 
 
 Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is is same as for the RMSE except for the fact that logrithm of target varible is used instead of actual values.
 
 Please Note that the complete r code, figures, and tables are uploaded as separate files and are referened at appropriate places in this report
 
-4.	Variable encoding
+## 4.	Variable encoding
 
 Note: The complete r code for this section is provided as the variable_encoding.R file. So after setting up the path you can run the complete r code but it may take some time to run (please check for r version or package availability related errors as they vary from system to system anyways the used versions are specified in the comments of r script). 
 
@@ -27,7 +27,7 @@ Table 1: Missing value summary for each variable. I observed that every predicto
 
 In data there was an identifier number for each training observation (train_id). As this has no predictive power so it was just kept there for reference but not used in modelling.
 
-4.1 First variable: Item Name (predictor variable)
+### 4.1 First variable: Item Name (predictor variable)
 
 This variable had the name of the item written in the text format. This variable is very important as the name of the item is one of the main factors in deciding its price. For example a computer will have price Rs. 35,000 or more whereas a pen will have the price of Rs. 10 or more, so the name is deciding the price. So I had to use this variable for prediction and since it is a categorical variable I needed to perform the dummy encoding for it so that it can be used in regression modelling. This is because most regression algorithm has this requirement that they perform very well on numeric data (except a few like decision trees). 
 The problem with this variable was that many item name appeared only one or very few times and in many cases the same item was given different names like pen, stationary pen, PEN and so on. Also the name had many special characters which may produce error at the time of training. So first I removed all the special characters using “gsub” command in r than I applied the text analytics tools to perform other preprocessing like covert to lower case, stemming, and lemmatization. Here I did not remove number because it has significance in predicting price like 16GB pen drive cost less than 32 GB pen drive. Then I used “term frequency” metric to extract the item names most frequent in the dataset and they were dummy encoded. Due to the computational limitations only top 50 item names were selected for now but same code can be used to select more or any desired number. This step was useful as now this will make our algorithm more focused on accurately predicting the prices of the items which are most frequent in the business/market.

@@ -1,4 +1,4 @@
-# Mercari Price Suggestion Challenge
+## Mercari Price Suggestion Challenge
 
 # 1.	Problem statement
 

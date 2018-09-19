@@ -1,6 +1,6 @@
 # Mercari Price Suggestion Challenge
 
-1.	Problem statement
+# 1.	Problem statement
 
 A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product.  
 

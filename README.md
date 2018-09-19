@@ -11,34 +11,9 @@ The most useful variables for predicting the price (item name, brand name, categ
 
 3.	Evaluation metric or Error metric 
 
-Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is the following: 
- 
- RMSLE =  
- 
-n = number of observations; pi = prediction from model for ith observation ; ai = actual price of ith observation.
+Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is is same as for the RMSE except for the fact that logrithm of target varible is used instead of actual values.
 
-The corresponding r code (also mentioned in the r scripts wherever required) used to calculate this metric for any two given vectors of prediction and actual values is the following:
 
-rmsle = function(pred, test) {
-	sub = as.numeric()
-	for (i in c(1:length(test))) {
-		p = pred[i] + 1 
-		if (p < 0) {  # this if loop take care for negative price predictions
-		p1 = 0
-		}
-		else {
-		p1 = log(p)
-		}
-		a = test[i] + 1
-		a1 = log(a)
-		s = (p1 - a1)^2
-		sub = c(sub, s)	
-	}
-	sum1 = sum(sub)
-	div = sum1 / length(test)
-	fin = sqrt(div)
-	return(fin)
-}
 
 
 

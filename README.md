@@ -2,6 +2,8 @@
 
 ## 1.	Problem statement
 
+<img align="left" width="100" height="100" src="http://www.fillmurray.com/100/100">
+
 A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product.  
 
 ## 2.	Background

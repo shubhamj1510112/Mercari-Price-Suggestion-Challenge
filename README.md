@@ -159,9 +159,9 @@ In this project a machine learning model has be constructed which can predict th
 
 I certify that this complete project was performed solely by me and the report presented here is novel and free from plagiarism
 
-Thanks,
-Yours sincerely,
-Shubham Kumar Jaiswal
+Thanks, <br />
+Yours sincerely, <br />
+Shubham Kumar Jaiswal <br />
 email: shubhamj.jaiswal89@gmail.com
   
 

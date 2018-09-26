@@ -158,10 +158,11 @@ In this project a machine learning model has be constructed which can predict th
 ## 10. Declaration
 
 I certify that this complete project was performed solely by me and the report presented here is novel and free from plagiarism
+
 Thanks,
 Yours sincerely,
 Shubham Kumar Jaiswal
-Registered email: shubhamj.jaiswal89@gmail.com
+email: shubhamj.jaiswal89@gmail.com
   
 
 

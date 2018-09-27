@@ -2,19 +2,19 @@
 
 ## 1.	Problem statement
 
-A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product. 
+<p align="justify"> A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product.  </p>
 
 ## 2.	Background
 <p align="justify">
 Several online trading companies or online shopping websites which sell a wide range of items need to suggest the prices automatically to their items. This process need to be automated because the items are just so many to be done by human beings and also getting it done by human being is very slow and expensive. So Artificial Intelligence and Machine Learning has a big application here. The Biggest Challenge here is that the price of items is dependent on the type of item and there are tens of thousands of different types of item. Added to this complexity prices of similar items can vary a lot based on their brand, condition of item, specifications of the item and so on. </p>
 
-The most useful variables for predicting the price (item name, brand name, category, and description) all of them are unstructured text data and the target variable is a continuous numerical variable. Thus, due to this complication this problem becomes even more challenging. So, to deal with this here I have used the text analytics tools to derive the useful term frequency related new variables from this unstructured text data which can help us predict the prices more accurately and also the training and prediction steps can be done in a time and computation efficient manner. The text data where the complete text is important (e.g. brand name) they were label encoded so that the processing and computation is faster with these new label encoded variables.  After basic pre-processing steps many different algorithms, ranging from basic statistical method such as generalized linear model to advanced neural networks, which were suitable for regressions were employed and tested. The algorithm selection was done using n-fold cross-validation method to obtain the minimum bias and minimum variance of the trained algorithm. Then tuning of different parameters for the selected model was performed to select the most optimum parameters. Finally the most optimum model with best performance was build and tested on the given test dataset.
+<p align="justify"> The most useful variables for predicting the price (item name, brand name, category, and description) all of them are unstructured text data and the target variable is a continuous numerical variable. Thus, due to this complication this problem becomes even more challenging. So, to deal with this here I have used the text analytics tools to derive the useful term frequency related new variables from this unstructured text data which can help us predict the prices more accurately and also the training and prediction steps can be done in a time and computation efficient manner. The text data where the complete text is important (e.g. brand name) they were label encoded so that the processing and computation is faster with these new label encoded variables.  After basic pre-processing steps many different algorithms, ranging from basic statistical method such as generalized linear model to advanced neural networks, which were suitable for regressions were employed and tested. The algorithm selection was done using n-fold cross-validation method to obtain the minimum bias and minimum variance of the trained algorithm. Then tuning of different parameters for the selected model was performed to select the most optimum parameters. Finally the most optimum model with best performance was build and tested on the given test dataset.  </p>
 
 
 
 ## 3.	Evaluation metric or Error metric 
 
-Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is the following: 
+<p align="justify"> Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is the following:  </p>
 
 ![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/error_metric_formula.png)
 
@@ -24,19 +24,19 @@ n = number of observations; pi = prediction from model for ith observation ; ai 
 
 ## 4.	Variable encoding
 
-Note: The complete r code for this section is provided as the variable_encoding.R file and figures/tables are uploaded separately. So after setting up the path you can run the complete r code but it may take some time to run (please check for r version or package availability related errors as they vary from system to system anyways the used versions are specified in the comments of r script).
+<p align="justify"> Note: The complete r code for this section is provided as the variable_encoding.R file and figures/tables are uploaded separately. So after setting up the path you can run the complete r code but it may take some time to run (please check for r version or package availability related errors as they vary from system to system anyways the used versions are specified in the comments of r script). </p>
 
-In this particular dataset I had four columns with unstructured text data like name, category, brand name, and item description. Moreover, these columns also had a lot of special characters which needed to be taken care. Also almost all of the variables had the missing values. Thus, to resolve these issues this particular step of label encoding was performed. Here I used many tools and techniques from text analytics and dummy variable encoding. Now let’s see this step in detail for each of the variable.
+<p align="justify"> In this particular dataset I had four columns with unstructured text data like name, category, brand name, and item description. Moreover, these columns also had a lot of special characters which needed to be taken care. Also almost all of the variables had the missing values. Thus, to resolve these issues this particular step of label encoding was performed. Here I used many tools and techniques from text analytics and dummy variable encoding. Now let’s see this step in detail for each of the variable. </p>
  
 Figure 1: Percent missing values plotted for each variable. Brand name has highest amount of missing values (>40%)
 
 ![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-1.jpeg)
 
-Table 1: Missing value summary for each variable. I observed that every predictor variable has missing values therefore; proper missing value treatment is required.
+<p align="justify"> Table 1: Missing value summary for each variable. I observed that every predictor variable has missing values therefore; proper missing value treatment is required. </p>
 
 ![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Table-1.JPG)
 
-In data there was an identifier number for each training observation (train_id). As this has no predictive power so it was just kept there for reference but not used in modelling.
+<p align="justify"> In data there was an identifier number for each training observation (train_id). As this has no predictive power so it was just kept there for reference but not used in modelling. </p>
 
 ### 4.1 First variable: Item Name (predictor variable)
 

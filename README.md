@@ -1,7 +1,7 @@
 # Mercari Price Suggestion Challenge
 
 ## 1.	Problem statement
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/cat1_cumulative_scree.png)
 
 A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product. 
 

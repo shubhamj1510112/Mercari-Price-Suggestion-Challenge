@@ -18,7 +18,7 @@ Please Note that the complete r code, figures, and tables are uploaded as separa
 
 ## 4.	Variable encoding
 
-** Note: The complete r code for this section is provided as the variable_encoding.R file and figures/tables are uploaded separately. So after setting up the path you can run the complete r code but it may take some time to run (please check for r version or package availability related errors as they vary from system to system anyways the used versions are specified in the comments of r script). **
+**Note: The complete r code for this section is provided as the variable_encoding.R file and figures/tables are uploaded separately. So after setting up the path you can run the complete r code but it may take some time to run (please check for r version or package availability related errors as they vary from system to system anyways the used versions are specified in the comments of r script).
 
 In this particular dataset I had four columns with unstructured text data like name, category, brand name, and item description. Moreover, these columns also had a lot of special characters which needed to be taken care. Also almost all of the variables had the missing values. Thus, to resolve these issues this particular step of label encoding was performed. Here I used many tools and techniques from text analytics and dummy variable encoding. Now let’s see this step in detail for each of the variable.
  

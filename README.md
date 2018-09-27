@@ -13,7 +13,7 @@ The most useful variables for predicting the price (item name, brand name, categ
 
 Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is the following: 
 
-![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/cat1_cumulative_scree.png)
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/error_metric_formula.png)
 
 n = number of observations; pi = prediction from model for ith observation ; ai = actual price of ith observation.
 
@@ -27,7 +27,11 @@ In this particular dataset I had four columns with unstructured text data like n
  
 Figure 1: Percent missing values plotted for each variable. Brand name has highest amount of missing values (>40%)
 
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/error_metric_formula.png)
+
 Table 1: Missing value summary for each variable. I observed that every predictor variable has missing values therefore; proper missing value treatment is required.
+
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/error_metric_formula.png)
 
 In data there was an identifier number for each training observation (train_id). As this has no predictive power so it was just kept there for reference but not used in modelling.
 

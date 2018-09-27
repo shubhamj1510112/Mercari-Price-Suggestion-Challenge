@@ -27,11 +27,11 @@ In this particular dataset I had four columns with unstructured text data like n
  
 Figure 1: Percent missing values plotted for each variable. Brand name has highest amount of missing values (>40%)
 
-![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/error_metric_formula.png)
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-1.jpeg)
 
 Table 1: Missing value summary for each variable. I observed that every predictor variable has missing values therefore; proper missing value treatment is required.
 
-![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/error_metric_formula.png)
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Table-1.JPG)
 
 In data there was an identifier number for each training observation (train_id). As this has no predictive power so it was just kept there for reference but not used in modelling.
 

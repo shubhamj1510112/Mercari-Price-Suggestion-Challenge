@@ -3,7 +3,7 @@
 ## 1.	Problem statement
 ![Alt text](relative/path/to/img.jpg?raw=true "Title")
 
-A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product.  <dt>justify</dt>
+A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product. 
 
 ## 2.	Background
 
@@ -12,7 +12,7 @@ The most useful variables for predicting the price (item name, brand name, categ
 
 ## 3.	Evaluation metric or Error metric 
 
-Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is is same as for the RMSE except for the fact that logrithm of target varible is used instead of actual values.<dt>justify</dt>
+Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is is same as for the RMSE except for the fact that logrithm of target varible is used instead of actual values.
 
 Please Note that the complete r code, figures, and tables are uploaded as separate files and are referened at appropriate places in this report
 

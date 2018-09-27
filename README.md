@@ -1,7 +1,6 @@
 # Mercari Price Suggestion Challenge
 
 ## 1.	Problem statement
-![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/cat1_cumulative_scree.png)
 
 A Regression problem: Construct a trained model with optimized algorithm, which can automatically predict the most accurate price of a given product based on the specific features/information provided about this product. 
 
@@ -12,9 +11,13 @@ The most useful variables for predicting the price (item name, brand name, categ
 
 ## 3.	Evaluation metric or Error metric 
 
-Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is is same as for the RMSE except for the fact that logrithm of target varible is used instead of actual values.
+Since it is a regression problem, we will have a squared error related metrics as the error metric to minimize for making accurate predictions. As our product price has a very broad range from tens to thousands, we have to use a transformed version of squared error metric so that we do not get biased for accuracy on the products with high price. Thus, I have used the “Root Mean Squared Logarithmic Error” (RMSLE) as the error metric to minimize (also suggested at the kaggle competition page) for this particular project. The mathematical formula for this error metric is the following: 
 
-Please Note that the complete r code, figures, and tables are uploaded as separate files and are referened at appropriate places in this report
+![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/cat1_cumulative_scree.png)
+
+n = number of observations; pi = prediction from model for ith observation ; ai = actual price of ith observation.
+
+**Please Note that the complete r code, figures, and tables are uploaded as separate files and are referened at appropriate places in this report**
 
 ## 4.	Variable encoding
 

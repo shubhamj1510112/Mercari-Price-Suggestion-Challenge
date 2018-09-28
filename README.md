@@ -60,7 +60,7 @@ Now in for cat1 I performed the dummy variable encoding for this variable. After
  
 <p align="justify"> Figure 2: Principal Components (PCs) were plotted against the cumulative variance of data explained. I observed that eight PCs are enough to explain the >80% variance present in the data </p>
  
- 
+ ![Alt text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-2.png)
  
  
 

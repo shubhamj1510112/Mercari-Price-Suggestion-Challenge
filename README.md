@@ -163,7 +163,7 @@ As a result of this step now we have 61 variables in our dataset for now:
  
 <p align="justify"> Figure 6: Box plot displaying the performance of xgBoost on different values of max_depth and nrounds in the 5-fold cross validation testing. On x-axis label the first value is max_depth parameter value and the next value is nrounds parameter value.</p>
 
-!(https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-6.jpeg)
+![Alt Text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-6.jpeg)
 
 
 ### 6.3 Training of final xgBoost model

@@ -81,8 +81,9 @@ As a result of this step now we have 61 variables in our dataset for now:
 
 ### 4.5 Fifth variable: shipping (predictor variable)
 
-<p align="justify"> This variable was easy to handle as this has only two possible values, one shipping cost from seller, and the other, shipping cost from buyer. This variable was already kind of dummy coded so no extra efforts were required. However, it had a lot of missing values (>4000). All these missing values were imputed with the most common shipping mode which was shipping cost paid by buyer. 
-As a result of this step now we have 63 variables in our dataset for now: 
+<p align="justify"> This variable was easy to handle as this has only two possible values, one shipping cost from seller, and the other, shipping cost from buyer. This variable was already kind of dummy coded so no extra efforts were required. However, it had a lot of missing values (>4000). All these missing values were imputed with the most common shipping mode which was shipping cost paid by buyer.</p> 
+
+<p align="justify"> As a result of this step now we have 63 variables in our dataset for now: 
 50 (item name dummy encoded) + 1 (item condition) + 8 (PCs encoding cat1) + 1 (label encoded cat2) + 1 (label encoded cat3) +1 (label encoded brand_name) + 1 (shipping) = 63 </p>
 
 ### 4.6 Sixth variable: item description (predictor variable)
@@ -123,7 +124,7 @@ As a result of this step now we have 63 variables in our dataset for now:
 
 <p align="justify"> Figure 3: Correlogram showing the correlation of different predictor variables with each other. Here the target variable is also included for the sake of visualization. None of the predictor variable showed correlation greater than 0.85 with any other predictor variable.</p>
 
-
+![Alt Text]()
 
 
 ### 5.4	 Outlier treatment
@@ -136,7 +137,7 @@ As a result of this step now we have 63 variables in our dataset for now:
  
 <p align="justify"> Figure 4: Line plot displaying the overall importance value for the 50 predictor variables. The overall importance values were calculated based on the mean decrease in RMSE value and the mean decrease in Gini values using random forest in “caret” package in r.</p>
 
-
+![Alt Text]()
 
 
 <p align="justify"> After completion of this step of data preprocessing, we now have excellent data for regression modelling with 22 predictor variables and one continuous target variable.</p>
@@ -153,16 +154,16 @@ As a result of this step now we have 63 variables in our dataset for now:
  
 <p align="justify"> Figure 5: Box plot displaying the performance of different algorithms in the 5-fold cross validation testing. Size of the box and length of the whisker show the amount of variance, whereas the place of box according to the y-axis represents the bias.</p> 
 
-
+![Alt Text]()
 
 
 ### 6.2	 Algorithm tuning
 
 <p align="justify"> As mentioned above xgBoost algorithm was selected for further analysis. We know that this algorithm can outcompete other algorithms because of its high accuracy, high efficiency, fast training and prediction, and high feasibility. Still I needed to fine tune this algorithm and select the most optimal parameters so that I can achieve highest performance from this algorithm using our training dataset. There are many parameters for this algorithm which could be tuned. Among the tree and linear version of this algorithm I used the tree version of this algorithm, this parameter is called as general parameter. Now among the booster parameters I could change many parameters like eta, gamma, max_depth, min_child_weight, max_delta_step, subsample, colsample_bytree, and nrounds. But I chose to optimize only max_depth and nrounds parameters because they affected the performance of the algorithm at the maximum in comparison to other parameters for this particular regression problem. We know that this parameter tuning is very much problem specific and I found that varying these two parameters could get me good results so I optimized these two parameters. After trying many different values I found that max_depth value of 5 and nrounds value of 25 gave the most optimal results in terms of RMSLE error metric value. Moreover, model at these two specific parameter values also showed acceptable low bias and low variance. Thus, I selected the max_depth value of 5 and nrounds value of 25 for further analysis and for building the final model on the complete training dataset. The box plot showing the comparison of different parameters for xgBoost is paste below.</p>
  
-<p align="justify"> Figure 5: Box plot displaying the performance of xgBoost on different values of max_depth and nrounds in the 5-fold cross validation testing. On x-axis label the first value is max_depth parameter value and the next value is nrounds parameter value.</p>
+<p align="justify"> Figure 6: Box plot displaying the performance of xgBoost on different values of max_depth and nrounds in the 5-fold cross validation testing. On x-axis label the first value is max_depth parameter value and the next value is nrounds parameter value.</p>
 
-
+!()
 
 
 ### 6.3 Training of final xgBoost model
@@ -180,8 +181,7 @@ Further I preprocessed the complete stage-1 and stage-2 data (on a multicore clu
 
 <p align="justify"> The complete r code for this section is provided as the kaggle_actual_testdata.R file and figures/tables are uploaded separately. So after setting up the path you can run the complete r code but it may take some time to run (please check for r version or package availability related errors as they vary from system to system anyways the used versions are specified in the comments of r script). </p>
  
-<p align="justify"> At kaggle, to obtain the leaderboard ranking, I needed to make prediction on the test data provided at kaggle. For this test data price variable is not provided and I needed to predict the prices using my trained model. Then, they will look at my file and calculate the RMSLE value and based on this value they will assign the leaderboard ranking. 
-I downloaded this kaggle test data and preprocessed it so that I could create the same variables for this test dataset as were used at the time of training of algorithm. Then the predictions of price for this test data were made using my trained xgBoost model. Now as the competition is over I cannot upload my results on kaggle but I am attaching the same file with this submission (file name: test_results_for_kaggle.xlsx or test_results.csv). In this file format only two columns are mentioned the “test_id” and their “Predicted_Price” (as per the requirement of kaggle). However, the complete information about these test observations can be fetched from “test.tsv” file using the “test_id” values.  </p>
+<p align="justify"> At kaggle, to obtain the leaderboard ranking, I needed to make prediction on the test data provided at kaggle. For this test data price variable is not provided and I needed to predict the prices using my trained model. Then, they will look at my file and calculate the RMSLE value and based on this value they will assign the leaderboard ranking. I downloaded this kaggle test data and preprocessed it so that I could create the same variables for this test dataset as were used at the time of training of algorithm. Then the predictions of price for this test data were made using my trained xgBoost model. Now as the competition is over I cannot upload my results on kaggle but I am attaching the same file with this submission (file name: test_results_for_kaggle.xlsx or test_results.csv). In this file format only two columns are mentioned the “test_id” and their “Predicted_Price” (as per the requirement of kaggle). However, the complete information about these test observations can be fetched from “test.tsv” file using the “test_id” values.  </p>
 
 ## 8.	Discussion
 

@@ -124,7 +124,7 @@ As a result of this step now we have 61 variables in our dataset for now:
 
 <p align="justify"> Figure 3: Correlogram showing the correlation of different predictor variables with each other. Here the target variable is also included for the sake of visualization. None of the predictor variable showed correlation greater than 0.85 with any other predictor variable.</p>
 
-![Alt Text]()
+![Alt Text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-3.jpeg)
 
 
 ### 5.4	 Outlier treatment
@@ -137,7 +137,7 @@ As a result of this step now we have 61 variables in our dataset for now:
  
 <p align="justify"> Figure 4: Line plot displaying the overall importance value for the 50 predictor variables. The overall importance values were calculated based on the mean decrease in RMSE value and the mean decrease in Gini values using random forest in “caret” package in r.</p>
 
-![Alt Text]()
+![Alt Text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-4.jpeg)
 
 
 <p align="justify"> After completion of this step of data preprocessing, we now have excellent data for regression modelling with 22 predictor variables and one continuous target variable.</p>
@@ -154,7 +154,7 @@ As a result of this step now we have 61 variables in our dataset for now:
  
 <p align="justify"> Figure 5: Box plot displaying the performance of different algorithms in the 5-fold cross validation testing. Size of the box and length of the whisker show the amount of variance, whereas the place of box according to the y-axis represents the bias.</p> 
 
-![Alt Text]()
+![Alt Text](https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-5.jpeg)
 
 
 ### 6.2	 Algorithm tuning
@@ -163,7 +163,7 @@ As a result of this step now we have 61 variables in our dataset for now:
  
 <p align="justify"> Figure 6: Box plot displaying the performance of xgBoost on different values of max_depth and nrounds in the 5-fold cross validation testing. On x-axis label the first value is max_depth parameter value and the next value is nrounds parameter value.</p>
 
-!()
+!(https://github.com/shubhamj1510112/Mercari-Price-Suggestion-Challenge/blob/master/Figure-6.jpeg)
 
 
 ### 6.3 Training of final xgBoost model
